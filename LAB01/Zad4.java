@@ -1,6 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
 public class Zad4 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
