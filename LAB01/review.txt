@@ -1,0 +1,4 @@
+Zadanie 2 - warto sprawdzić, czy pobrane dane od użytkownika są poprawnego formatu
+Zadanie 3 - jeżeli znamy mniżnik to łatwiej jest obliczać w pętli, jeżeli chcielibyśmy poznać 1000 takich elementów to zaproponowane rozwiązanie byłoby kłopotliwe
+
+Ocena 5/5
