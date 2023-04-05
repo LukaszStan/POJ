@@ -1,0 +1,4 @@
+1. Pól klasy/enumow raczej nie opisujemy jako final (private final String symbol;) poniewz wartosc ta zmienia sie w zależności
+    od w tym przypadku enuma.
+
+Ocena 5/5
