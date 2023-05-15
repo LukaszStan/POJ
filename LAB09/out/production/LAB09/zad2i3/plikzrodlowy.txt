@@ -1,0 +1,16 @@
+15
+jabłko -> apple
+dom -> house
+kot -> cat
+samochód -> car
+słońce -> sun
+książka -> book
+pies -> dog
+telefon -> phone
+drzewo -> tree
+komputer -> computer
+ryba -> fish
+kwiat -> flower
+ziemia -> earth
+dziecko -> child
+piłka -> ball
