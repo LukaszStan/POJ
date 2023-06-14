@@ -31,7 +31,7 @@ public class WordDB {
                 String category = parts[0];
                 categories.add(category);
                 //Reszta wartości z tabeli parts to słowa odnoszące się do danej kategorii, wrzucamy je do nowej tabeli values
-                String values[] = Arrays.copyOfRange(parts, 1, parts.length);
+                String[] values = Arrays.copyOfRange(parts, 1, parts.length);
                 wordList.put(category, values);
 
             }

@@ -101,7 +101,7 @@ public class Ui extends JFrame implements ActionListener {
             }
         }else if(command.equals("Wyjdź")){
             dispose();
-            return;
+            System.exit(0);
         }else{
             //Wyłączenie przycisków
             JButton button = (JButton) e.getSource();
@@ -191,9 +191,9 @@ public class Ui extends JFrame implements ActionListener {
         String hiddenWord = CustomTools.hideWords(wordChallenge[1]);
         hiddenWordLabel.setText(hiddenWord);
         //Włączamy przyciski z literami do odgadywania
-        for(int i = 0; i < letterButtons.length; i++){
-            letterButtons[i].setEnabled(true);
-            letterButtons[i].setBackground(Color.decode("#14212D"));
+        for (JButton letterButton : letterButtons) {
+            letterButton.setEnabled(true);
+            letterButton.setBackground(Color.decode("#14212D"));
         }
     }
 }
