@@ -72,14 +72,14 @@ public class Ui extends JFrame implements ActionListener {
         //Przycisk reset
         JButton resetButton = new JButton("Reset");
         resetButton.setForeground(Color.WHITE);
-        resetButton.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+        resetButton.setFont(new Font("Comic Sans MS", Font.BOLD, 13));
         resetButton.setBackground(Color.decode("#4C4E52"));
         resetButton.addActionListener(this);
         buttonPanel.add(resetButton);
         //Przycisk wyjścia z gry
-        JButton quitButton = new JButton("Quit");
+        JButton quitButton = new JButton("Wyjdź");
         quitButton.setForeground(Color.WHITE);
-        quitButton.setFont(new Font("Comic Sans MS", Font.BOLD, 15));
+        quitButton.setFont(new Font("Comic Sans MS", Font.BOLD, 13));
         quitButton.setBackground(Color.decode("#4C4E52"));
         quitButton.addActionListener(this);
         buttonPanel.add(quitButton);
@@ -99,7 +99,7 @@ public class Ui extends JFrame implements ActionListener {
             if(command.equals("Restart")){
                 resultDialog.setVisible(false);
             }
-        }else if(command.equals("Quit")){
+        }else if(command.equals("Wyjdź")){
             dispose();
             return;
         }else{
@@ -124,7 +124,7 @@ public class Ui extends JFrame implements ActionListener {
                 //Użytkownik odgadł słowo poprawnie
                 if(!hiddenWordLabel.getText().contains("*")){
                     //Okno dialogowe z wiadomością o odgadnięciu słowa
-                    resultLabel.setText("You got it right!");
+                    resultLabel.setText("Brawo wygrałeś!");
                     resultDialog.setVisible(true);
                 }
 
@@ -138,18 +138,18 @@ public class Ui extends JFrame implements ActionListener {
                 //Użytkownik nie odgadł słowa
                 if(incorrectGuesses >= 6){
                     //Okno dialogowe z wiadomością o przegranej
-                    resultLabel.setText("Too Bad, Try Again?");
+                    resultLabel.setText("Niestety nie udało ci się, Spróbuj ponownie klikając w Restart");
                     resultDialog.setVisible(true);
                 }
             }
-            wordLabel.setText("Word: " + wordChallenge[1]);
+            wordLabel.setText("Słowo: " + wordChallenge[1]);
         }
     }
 
     private void createResultDialog(){
         resultDialog = new JDialog();
-        resultDialog.setTitle("Result");
-        resultDialog.setSize(270,127);
+        resultDialog.setTitle("Wynik");
+        resultDialog.setSize(500,127);
         resultDialog.getContentPane().setBackground(Color.decode("#101820"));
         resultDialog.setResizable(false);
         resultDialog.setLocationRelativeTo(this);
