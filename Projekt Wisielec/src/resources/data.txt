@@ -1,0 +1,5 @@
+Animals,cat,dog,lion,elephant,zebra,kangaroo,bear,tiger,cow,field mouse
+Countries,Poland,France,Brazil,Japan,Australia,Germany,Canada,Italy,India,Russia
+Fruits,apple,banana,orange,strawberry,watermelon,pear,pineapple,grape,peach,raspberry
+Occupations,doctor,teacher,pilot,firefighter,hairdresser,salesperson,engineer,chef,dancer,mail carrier
+Colors,red,blue,yellow,green,purple,pink,orange,black,white,gray
