@@ -13,7 +13,7 @@ public class Ui extends JFrame implements ActionListener {
     private final WordDB wordDB;
     private JLabel hangmanImage, categoryLabel, hiddenWordLabel, resultLabel, wordLabel;
     private JButton[] letterButtons;
-    private JDialog resultDialog;
+    private JDialog resultDialog,rulesDialog;
     public Ui(){
         super("Wisielec");
         setSize(new Dimension(540,760));
@@ -27,6 +27,7 @@ public class Ui extends JFrame implements ActionListener {
         wordDB = new WordDB();
         letterButtons = new JButton[26];
         wordChallenge = wordDB.loadChallenge();
+        createRulesDialog();
         createResultDialog();
 
         addGuiComponents();
@@ -102,7 +103,9 @@ public class Ui extends JFrame implements ActionListener {
         }else if(command.equals("Wyjdź")){
             dispose();
             System.exit(0);
-        }else{
+        } else if (command.equals("Zagraj")) {
+            rulesDialog.dispose();
+        } else{
             //Wyłączenie przycisków
             JButton button = (JButton) e.getSource();
             button.setEnabled(false);
@@ -178,6 +181,62 @@ public class Ui extends JFrame implements ActionListener {
         resultDialog.add(resultLabel);
         resultDialog.add(wordLabel);
         resultDialog.add(restartButton);
+    }
+
+    private void createRulesDialog(){
+        rulesDialog = new JDialog();
+        rulesDialog.setTitle("Zasady");
+        rulesDialog.setSize(800,300);
+        rulesDialog.getContentPane().setBackground(Color.decode("#101820"));
+        rulesDialog.setResizable(false);
+        rulesDialog.setLocationRelativeTo(this);
+        rulesDialog.setModal(true);
+        rulesDialog.setLayout(new GridLayout(7,1));
+        rulesDialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+
+        JLabel welcomeLabel = new JLabel();
+        welcomeLabel.setForeground(Color.white);
+        welcomeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        welcomeLabel.setText("Witaj w grze w wisielca");
+
+        JLabel introLabel = new JLabel();
+        introLabel.setForeground(Color.white);
+        introLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        introLabel.setText("Poniżej zostały przedstawione krótkie zasady gry");
+
+        JLabel rule1Label = new JLabel();
+        rule1Label.setForeground(Color.white);
+        rule1Label.setHorizontalAlignment(SwingConstants.CENTER);
+        rule1Label.setText("1. Słowa do odgadnięcia są po ang, kategorie w których się znajdują są po pl");
+
+        JLabel rule2Label = new JLabel();
+        rule2Label.setForeground(Color.white);
+        rule2Label.setHorizontalAlignment(SwingConstants.CENTER);
+        rule2Label.setText("2. Poprawnie odgadnięta litera zaświeci się na zielono, jeżeli litera nie znajduje się w słowie zaświeci się na czerwono");
+
+        JLabel rule3Label = new JLabel();
+        rule3Label.setForeground(Color.white);
+        rule3Label.setHorizontalAlignment(SwingConstants.CENTER);
+        rule3Label.setText("3. Przycisk Reset, losuje nam nową kategorię oraz słowo z niej");
+
+        JLabel ggLabel = new JLabel();
+        ggLabel.setForeground(Color.white);
+        ggLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        ggLabel.setText("Miłej gry :)");
+
+        JButton playButton = new JButton("Zagraj");
+        playButton.setForeground(Color.WHITE);
+        playButton.setBackground(Color.decode("#4C4E52"));
+        playButton.addActionListener(this);
+
+        rulesDialog.add(welcomeLabel);
+        rulesDialog.add(introLabel);
+        rulesDialog.add(rule1Label);
+        rulesDialog.add(rule2Label);
+        rulesDialog.add(rule3Label);
+        rulesDialog.add(ggLabel);
+        rulesDialog.add(playButton);
+        rulesDialog.setVisible(true);
     }
     private void resetGame(){
         //Losujemy kolejną kategorie i słowo, oraz resetujemy licznik nieudanych prób
